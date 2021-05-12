@@ -27,7 +27,7 @@ Once all the modules are loaded, Type the following command
 > npx run build
 
 
-### Step 3: Start the application
+### Step 3: Test the application is working
  
  Now you can run the html page using `webpack-dev-server` which can be done using the following command.
  
@@ -35,6 +35,14 @@ Once all the modules are loaded, Type the following command
 
  So, that application will be running on localhost:8084 port.
  
+
+### Step 4: Adding SASS plugins.
+
+Add the sass plugin into the project based on the tutorial link in https://webpack.js.org/loaders/sass-loader/#extracts-css-into-separate-files
+
+> npm install --save-dev mini-css-extract-plugin 
+
+
 
 
  
