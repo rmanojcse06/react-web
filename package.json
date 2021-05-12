@@ -1,0 +1,39 @@
+{
+  "name": "py-react-one",
+  "version": "1.0.0",
+  "description": "Demo on cosuming DML API",
+  "main": "./src/js/start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode development",
+    "start-dev-server": "webpack serve --mode development --open --hot --host localhost --port 8085",
+    "watch": "webpack --watch -d --output ./target/classes/static/built/bundle.js"
+  },
+  "keywords": [
+    "rest",
+    "hateoas",
+    "react",
+    "redux"
+  ],
+  "author": "rmanojcse06@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "html-webpack-plugin": "^5.3.1",
+    "sass": "^1.32.12",
+    "sass-loader": "^11.1.0",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
