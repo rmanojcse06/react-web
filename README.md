@@ -1,13 +1,27 @@
 # Tutorial to create Styling components using Sass.
 
-### Step 1: Add sass loader with the `webpack.config.js`
 
+### Step 1: Pull the Git code from github
 
+Please find the following commands to load sass-update branch in your local repository.
 
+`
+	git init
+	git remote add origin https://github.com/rmanojcse06/react-web.git
+	git fetch
+	git checkout origin/sass-update
+`
 
+### Step 2: Load as a node.js project
+
+Initialize a node project using the following command
+> npm init
+ 
+Load node_modules using the following command
+> npm install
+
+Once all the modules are loaded, Type the following command
 > npx run webpack 
-
-If you got any error then wait till entry point and files are been created.
 
 
 
