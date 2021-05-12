@@ -20,19 +20,20 @@ Initialize a node project using the following command
 Load node_modules using the following command
 > npm install
 
+Check if babel transpiling is correct before building
+> npx babel src --out-dir dist
+
 Once all the modules are loaded, Type the following command
-> npx run webpack 
+> npx run build
 
 
-
-
- ### Step 9: Start the application
+### Step 3: Start the application
  
  Now you can run the html page using `webpack-dev-server` which can be done using the following command.
  
- > npx webpack serve --mode development --open --hot --port 8085
+ > npx run start-dev-server
 
- So, that application will be running on localhost:8085 port.
+ So, that application will be running on localhost:8084 port.
  
 
 
