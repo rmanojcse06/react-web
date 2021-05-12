@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
 	entry: {
@@ -9,7 +9,7 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, 'target'),
-		filename: 'devrollouts-V0_0_1.js'
+		filename: 'react-web-sass-v0.0.2.js'
 	},
 	module: {
 		rules: [
