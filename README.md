@@ -5,12 +5,12 @@
 
 Please find the following commands to load sass-update branch in your local repository.
 
-`
-	git init
-	git remote add origin https://github.com/rmanojcse06/react-web.git
-	git fetch
-	git checkout origin/sass-update
-`
+	`
+		git init
+		git remote add origin https://github.com/rmanojcse06/react-web.git
+		git fetch
+		git checkout origin/sass-update
+	`
 
 ### Step 2: Load as a node.js project
 
