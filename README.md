@@ -14,9 +14,6 @@ Please find the following commands to load sass-update branch in your local repo
 
 ### Step 2: Load as a node.js project
 
-Initialize a node project using the following command
-> npm init
- 
 Load node_modules using the following command
 > npm install
 
@@ -31,7 +28,7 @@ Once all the modules are loaded, Type the following command
  
  Now you can run the html page using `webpack-dev-server` which can be done using the following command.
  
- > npx run start-dev-server
+ > npx run dev-start
 
  So, that application will be running on localhost:8084 port.
  
