@@ -46,12 +46,17 @@ Add the sass plugin into the project based on the tutorial link in https://webpa
 
 ### Step 5: Add the following line in webpack configuration
 
-The below line to be added with module exports will make the file as 
+The below line to be added with module exports will make the file as to import style sheets without extensions.
 
 `
 	resolve: {
 		extensions: ['.js', '.jsx', '.html', '.scss','.css']
 	}
+`
+
+Other wise the following error will be caught,
+`
+	Field 'browser' doesn't contain a valid alias configuration
 `
 
 ### Step 6: Project Folder structure:
