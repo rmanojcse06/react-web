@@ -42,17 +42,25 @@ Add the sass plugin into the project based on the tutorial link in https://react
 
 ### Step 5: Add the following line in webpack configuration
 
-The below line to be added with module exports will make the file as to import style sheets without extensions.
+Add the following line in webpack to enable css loader for bootstrap.css under modules[0].rules array.
 
-`
-	resolve: {
-		extensions: ['.js', '.jsx', '.html', '.scss','.css']
-	}
-`
+You can see that exclude node_modules not updated in configuration.
+
+
+	{
+		test:/\.css$/,
+		use:[
+			{loader: 'style-loader'},
+			{loader: 'css-loader'}
+		]
+	},
+
 
 Other wise the following error will be caught,
 `
-	Field 'browser' doesn't contain a valid alias configuration
+	ERROR in ./node_modules/bootstrap/dist/css/bootstrap.css 7:0
+	Module parse failed: Unexpected token (7:0)
+	You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
 `
 
 ### Step 6: Project Folder structure:
@@ -63,16 +71,15 @@ Please find the basic project structure to be created to execute the file:
 	- :open_file_folder: src/
 		- :open_file_folder: js/
 			- :open_file_folder: components/
-				- :clipboard: App.jsx		
+				- :clipboard: App.jsx
+				- :clipboard: Top.jsx		
 			- :clipboard: start.js (main entry point)
 		- :open_file_folder: styles/
 			- :open_file_folder: sass/
 				- :open_file_folder: common/
 					- :pushpin: my-style.scss
 				- :open_file_folder: header/
-				- :open_file_folder: footer/
-			- :open_file_folder: css/
-				- :pushpin: bootstrap.css 		
+				- :open_file_folder: footer/		
 		- :clipboard: first.html 	
 	- :clipboard: package.json
 	- :clipboard: webpack.config.js
@@ -82,37 +89,22 @@ Please find the basic project structure to be created to execute the file:
 
 ### Step 7: Now you can create sass file and link it to your react component.
 
-Please find `src/styles/sass/common/mystyle.scss`,  
-
-`
-	$bgColor: lightblue;
-	$txtColor: darkblue;
-	$defaultFontSz: 18px;
-	$fontMap: (
-		"v-small": 8px,
-		"small": 12px,
-		"medium": 18px,
-		"large": 24px,
-		"v-large": 30px
-	);
-
-	/* Use the variables */
-	body {
-		background-color: $bgColor;
-		color: $txtColor;
-		font-size: $defaultFontSz;
-	}
-`
+Add `bootstrap/dist/css/bootstrap.css` into `App.js`
 
 Please find `src/js/components/App.jsx` as follows:
 
 `
-		import styles from '../../styles/sass/common/my-style'
+		import React, { Component } from 'react';
+		import TopComponent from './Top';
+
+		import 'bootstrap/dist/css/bootstrap.css';
+		import styles from '../../styles/sass/common/my-style';
 
 		class App extends Component{
 		   render(){
 		      return(
 			 <div>
+					<TopComponent/>
 			    <h1>Hello World</h1>
 			 </div>
 		      );
