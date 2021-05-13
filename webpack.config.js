@@ -9,7 +9,7 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, 'target'),
-		filename: 'react-web-sass-v0.0.2.js'
+		filename: '[name]-v0.0.2.js'
 	},
 	module: {
 		rules: [
@@ -25,7 +25,8 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.css$/,
+				test: /\.s(a|c)ss$/,
+				exclude: /node_modules/,
 				use:[
 					{
 						loader: 'style-loader'
@@ -50,5 +51,8 @@ module.exports = {
 		}),
 	],
 	mode: 'development',
-	cache: true
+	cache: true,
+	resolve: {
+		extensions: ['.js', '.jsx', '.html', '.scss','.css']
+	},
 }

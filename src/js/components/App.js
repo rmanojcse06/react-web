@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+
+import styles from '../../styles/sass/common/my-style'
+
 class App extends Component{
    render(){
       return(
