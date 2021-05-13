@@ -1,4 +1,4 @@
-# Tutorial to create Styling components using Sass.
+# Tutorial to create Styling components using Bootstrap.
 
 
 ### Step 1: Pull the Git code from github
@@ -33,12 +33,11 @@ Once all the modules are loaded, Type the following command
  So, that application will be running on localhost:8084 port.
  
 
-### Step 4: Adding SASS plugins.
+### Step 4: Adding Bootstrap CSS for react.
 
-Add the sass plugin into the project based on the tutorial link in https://webpack.js.org/loaders/sass-loader/#extracts-css-into-separate-files
+Add the sass plugin into the project based on the tutorial link in https://react-bootstrap.github.io/getting-started/introduction
 
-> npm install --save-dev mini-css-extract-plugin 
-> npm install --save-dev sass-loader style-loader css-loader node-sass
+> npm install react-bootstrap bootstrap@4.6.0
 
 
 ### Step 5: Add the following line in webpack configuration
