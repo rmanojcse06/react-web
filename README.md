@@ -9,7 +9,7 @@ Please find the following commands to load sass-update branch in your local repo
 		git init
 		git remote add origin https://github.com/rmanojcse06/react-web.git
 		git fetch
-		git checkout origin/sass-update
+		git checkout origin/bootstrap
 	`
 
 ### Step 2: Load as a node.js project
@@ -74,7 +74,9 @@ Please find the basic project structure to be created to execute the file:
 				- :open_file_folder: common/
 					- :pushpin: my-style.scss
 				- :open_file_folder: header/
-				- :open_file_folder: footer/		
+				- :open_file_folder: footer/
+			- :open_file_folder: css/
+				- :pushpin: bootstrap.css 		
 		- :clipboard: first.html 	
 	- :clipboard: package.json
 	- :clipboard: webpack.config.js
