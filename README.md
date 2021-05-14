@@ -1,4 +1,4 @@
-# Tutorial to create Styling components using Sass.
+# Tutorial to create Styling components using Bootstrap.
 
 
 ### Step 1: Pull the Git code from github
@@ -14,9 +14,6 @@ Please find the following commands to load sass-update branch in your local repo
 
 ### Step 2: Load as a node.js project
 
-Initialize a node project using the following command
-> npm init
- 
 Load node_modules using the following command
 > npm install
 
@@ -31,32 +28,39 @@ Once all the modules are loaded, Type the following command
  
  Now you can run the html page using `webpack-dev-server` which can be done using the following command.
  
- > npx run start-dev-server
+ > npx run dev-start
 
  So, that application will be running on localhost:8084 port.
  
 
-### Step 4: Adding SASS plugins.
+### Step 4: Adding Bootstrap CSS for react.
 
-Add the sass plugin into the project based on the tutorial link in https://webpack.js.org/loaders/sass-loader/#extracts-css-into-separate-files
+Add the sass plugin into the project based on the tutorial link in https://react-bootstrap.github.io/getting-started/introduction
 
-> npm install --save-dev mini-css-extract-plugin 
-> npm install --save-dev sass-loader style-loader css-loader node-sass
+> npm install react-bootstrap bootstrap@4.6.0
 
 
 ### Step 5: Add the following line in webpack configuration
 
-The below line to be added with module exports will make the file as to import style sheets without extensions.
+Add the following line in webpack to enable css loader for bootstrap.css under modules[0].rules array.
 
-`
-	resolve: {
-		extensions: ['.js', '.jsx', '.html', '.scss','.css']
-	}
-`
+You can see that exclude node_modules not updated in configuration.
+
+
+	{
+		test:/\.css$/,
+		use:[
+			{loader: 'style-loader'},
+			{loader: 'css-loader'}
+		]
+	},
+
 
 Other wise the following error will be caught,
 `
-	Field 'browser' doesn't contain a valid alias configuration
+	ERROR in ./node_modules/bootstrap/dist/css/bootstrap.css 7:0
+	Module parse failed: Unexpected token (7:0)
+	You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
 `
 
 ### Step 6: Project Folder structure:
@@ -67,16 +71,15 @@ Please find the basic project structure to be created to execute the file:
 	- :open_file_folder: src/
 		- :open_file_folder: js/
 			- :open_file_folder: components/
-				- :clipboard: App.jsx		
+				- :clipboard: App.jsx
+				- :clipboard: Top.jsx		
 			- :clipboard: start.js (main entry point)
 		- :open_file_folder: styles/
 			- :open_file_folder: sass/
 				- :open_file_folder: common/
 					- :pushpin: my-style.scss
 				- :open_file_folder: header/
-				- :open_file_folder: footer/
-			- :open_file_folder: css/
-				- :pushpin: bootstrap.css 		
+				- :open_file_folder: footer/		
 		- :clipboard: first.html 	
 	- :clipboard: package.json
 	- :clipboard: webpack.config.js
@@ -86,37 +89,22 @@ Please find the basic project structure to be created to execute the file:
 
 ### Step 7: Now you can create sass file and link it to your react component.
 
-Please find `src/styles/sass/common/mystyle.scss`,  
-
-`
-	$bgColor: lightblue;
-	$txtColor: darkblue;
-	$defaultFontSz: 18px;
-	$fontMap: (
-		"v-small": 8px,
-		"small": 12px,
-		"medium": 18px,
-		"large": 24px,
-		"v-large": 30px
-	);
-
-	/* Use the variables */
-	body {
-		background-color: $bgColor;
-		color: $txtColor;
-		font-size: $defaultFontSz;
-	}
-`
+Add `bootstrap/dist/css/bootstrap.css` into `App.js`
 
 Please find `src/js/components/App.jsx` as follows:
 
 `
-		import styles from '../../styles/sass/common/my-style'
+		import React, { Component } from 'react';
+		import TopComponent from './Top';
+
+		import 'bootstrap/dist/css/bootstrap.css';
+		import styles from '../../styles/sass/common/my-style';
 
 		class App extends Component{
 		   render(){
 		      return(
 			 <div>
+					<TopComponent/>
 			    <h1>Hello World</h1>
 			 </div>
 		      );
