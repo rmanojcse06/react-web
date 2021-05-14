@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
 	entry: {
-		main: '/src/js/start.js'
+		reactBootstrap: '/src/js/start.js'
 	},
 	output: {
 		path: path.resolve(__dirname, 'target'),
@@ -25,8 +25,14 @@ module.exports = {
 				}
 			},
 			{
+				test:/\.css$/,
+				use:[
+					{loader: 'style-loader'},
+					{loader: 'css-loader'}
+				]
+			},
+			{
 				test: /\.s(a|c)ss$/,
-				exclude: /node_modules/,
 				use:[
 					{
 						loader: 'style-loader'
@@ -34,7 +40,7 @@ module.exports = {
 					{
 						loader: 'css-loader',
 						options: {
-							modules: true
+							sourceMap: true
 						}
 					},
 					{

@@ -9,9 +9,9 @@ $fontMap: (
 	"v-large": 30px
 );
 
-/* Use the variables */
-body {
-	background-color: $bgColor;
-	color: $txtColor;
-	font-size: $defaultFontSz;
-}
+.app {
+	background-color: red;	
+	color: green;
+	font-size: 50px;
+};
+
